@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8i6yhiduc33x"
-path="res://.godot/imported/tile003.png-82625bcaa784248404c4a452f61d26c1.ctex"
+uid="uid://br62iirvhklrq"
+path="res://.godot/imported/tile004.png-615a4bf4effc1f4a7e2c48c2a2b53dc5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/medieval warrior/run/run2/tile003.png"
-dest_files=["res://.godot/imported/tile003.png-82625bcaa784248404c4a452f61d26c1.ctex"]
+source_file="res://assets/characters/medieval warrior/runs/run1/tile004.png"
+dest_files=["res://.godot/imported/tile004.png-615a4bf4effc1f4a7e2c48c2a2b53dc5.ctex"]
 
 [params]
 

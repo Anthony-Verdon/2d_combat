@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://s7dk1hqft3o6"
-path="res://.godot/imported/tile007.png-bd888ce05e293d3438d06e3ea689e78d.ctex"
+path="res://.godot/imported/tile007.png-e18bc87fb27cb1ad6b0065b61f77f3e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/medieval warrior/run/run2/tile007.png"
-dest_files=["res://.godot/imported/tile007.png-bd888ce05e293d3438d06e3ea689e78d.ctex"]
+source_file="res://assets/characters/medieval warrior/runs/run2/tile007.png"
+dest_files=["res://.godot/imported/tile007.png-e18bc87fb27cb1ad6b0065b61f77f3e8.ctex"]
 
 [params]
 

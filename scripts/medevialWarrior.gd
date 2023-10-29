@@ -40,7 +40,7 @@ func updatePosition(input_direction: Vector2, delta: float) -> void:
 
 func updateAnimation(input_direction: Vector2) -> void:
 	if (input_direction != Vector2.ZERO):
-		animatedSprite2D.play("run")
+		animatedSprite2D.play("run1")
 		if (input_direction.x != direction):
 			animatedSprite2D.flip_h = !animatedSprite2D.flip_h
 			weaponHitBox.scale.x = -weaponHitBox.scale.x
