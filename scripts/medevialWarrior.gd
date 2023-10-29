@@ -22,10 +22,13 @@ func _process(delta) -> void:
 		attack();
 	elif (latestAnimationEnded):
 		get_node("weapon/CollisionPolygon2D").set_deferred("disabled", true)
-		var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-		input_direction.y = 0;
-		updatePosition(input_direction, delta)
-		updateAnimation(input_direction)
+		var directionX: int = 0
+		if (Input.is_key_pressed(KEY_A) || Input.is_key_pressed(KEY_LEFT)):
+			directionX -= 1
+		if (Input.is_key_pressed(KEY_D) || Input.is_key_pressed(KEY_RIGHT)):
+			directionX += 1
+		updatePosition(directionX, delta)
+		updateAnimation(directionX)
 	elif (animatedSprite2D.animation == "attack1" && animatedSprite2D.frame == 2):
 		get_node("weapon/CollisionPolygon2D").set_deferred("disabled", false)
 	
@@ -34,17 +37,17 @@ func attack() -> void:
 	animatedSprite2D.play("attack1")
 	latestAnimationEnded = false;
 
-func updatePosition(input_direction: Vector2, delta: float) -> void:
-	velocity = input_direction * SPEED * delta
+func updatePosition(directionX: int, delta: float) -> void:
+	velocity = Vector2(directionX, 0) * SPEED * delta
 	move_and_slide()
 
-func updateAnimation(input_direction: Vector2) -> void:
-	if (input_direction != Vector2.ZERO):
-		animatedSprite2D.play("run1")
-		if (input_direction.x != direction):
+func updateAnimation(directionX: int) -> void:
+	if (directionX != 0):
+		animatedSprite2D.play("run2")
+		if (directionX != direction):
 			animatedSprite2D.flip_h = !animatedSprite2D.flip_h
 			weaponHitBox.scale.x = -weaponHitBox.scale.x
-			direction = input_direction.x
+			direction = directionX
 	else:
 		animatedSprite2D.play("idle")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://bjr0xdwbjdnnw"]
+[gd_scene load_steps=97 format=3 uid="uid://bjr0xdwbjdnnw"]
 
 [ext_resource type="Script" path="res://scripts/medevialWarrior.gd" id="1_yplq1"]
 [ext_resource type="Texture2D" uid="uid://ckrjnruptc0h1" path="res://assets/characters/medieval warrior/attacks/attack1/tile000.png" id="2_6fgr7"]
@@ -80,6 +80,16 @@
 [ext_resource type="Texture2D" uid="uid://dtb0epecn2qjj" path="res://assets/characters/medieval warrior/runs/run1/tile006.png" id="47_bsp58"]
 [ext_resource type="Texture2D" uid="uid://ctwatt30fxkx3" path="res://assets/characters/medieval warrior/runs/run1/tile007.png" id="48_ig2gy"]
 [ext_resource type="Texture2D" uid="uid://bcbaieojf50nq" path="res://assets/enemies/Skeleton/walk/tile003.png" id="48_u7ff0"]
+[ext_resource type="Texture2D" uid="uid://ch1j3fr54jtyp" path="res://assets/characters/medieval warrior/runs/run2/tile000.png" id="49_21e31"]
+[ext_resource type="Texture2D" uid="uid://cwldav3wv4dj0" path="res://assets/characters/medieval warrior/runs/run2/tile001.png" id="50_0jx7a"]
+[ext_resource type="Texture2D" uid="uid://cmwasoi6nnqws" path="res://assets/characters/medieval warrior/runs/run2/tile002.png" id="51_cmh6g"]
+[ext_resource type="Texture2D" uid="uid://c8i6yhiduc33x" path="res://assets/characters/medieval warrior/runs/run2/tile003.png" id="52_4oeiq"]
+[ext_resource type="Texture2D" uid="uid://cugpjbxcjxpns" path="res://assets/characters/medieval warrior/runs/run2/tile004.png" id="53_sd6gx"]
+[ext_resource type="Texture2D" uid="uid://b1bopctpadb1f" path="res://assets/characters/medieval warrior/runs/run2/tile005.png" id="54_o4hpb"]
+[ext_resource type="Texture2D" uid="uid://sd1vwgcx0onl" path="res://assets/characters/medieval warrior/runs/run2/tile006.png" id="55_mq243"]
+[ext_resource type="Texture2D" uid="uid://s7dk1hqft3o6" path="res://assets/characters/medieval warrior/runs/run2/tile007.png" id="56_fr7ia"]
+[ext_resource type="Texture2D" uid="uid://dsqefnuehfqmv" path="res://assets/characters/medieval warrior/slide/tile000.png" id="57_cigj7"]
+[ext_resource type="Texture2D" uid="uid://gk4q2e2rth0r" path="res://assets/characters/medieval warrior/slide/tile001.png" id="58_k6kt0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iei1d"]
 radius = 15.0
@@ -278,12 +288,42 @@ animations = [{
 "name": &"run1",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_21e31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_0jx7a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_cmh6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_4oeiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_sd6gx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_o4hpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_mq243")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_fr7ia")
+}],
 "loop": true,
 "name": &"run2",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_cigj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_k6kt0")
+}],
 "loop": true,
 "name": &"slide",
 "speed": 5.0
@@ -443,7 +483,8 @@ shape = SubResource("CapsuleShape2D_iei1d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="medevialWarrior"]
 sprite_frames = SubResource("SpriteFrames_rgexc")
-animation = &"roll"
+animation = &"run2"
+frame_progress = 0.697994
 
 [node name="weapon" type="Area2D" parent="medevialWarrior"]
 
