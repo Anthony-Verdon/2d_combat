@@ -5,28 +5,40 @@ const SPEED = 2500.0
 
 @onready var animatedSprite2D = $AnimatedSprite2D
 @onready var hitbox = $CollisionShape2D
+@onready var weaponHitBoxFrame6 = $weapon/hitBoxFrame6
+@onready var weaponHitBoxFrame7 = $weapon/hitBoxFrame7
+@onready var healthBar = $healthBar/ProgressBar
 @onready var player = get_tree().root.get_node("Node2D/medevialWarrior")
 
 var health: int = 100;
 var isDead: bool = false;
 var latestAnimationEnded : bool = true
-
+var direction: int = 1
 func _ready() -> void:
-	animatedSprite2D.play("idle")
+	healthBar.value = health
 
 func _process(delta: float) -> void:
 	if (isDead):
 		return
-	if (animatedSprite2D.animation == "attack" && (animatedSprite2D.frame == 6 || animatedSprite2D.frame == 7)):
-		get_node("weapon/CollisionPolygon2D").set_deferred("disabled", false)
-		return
 
-	get_node("weapon/CollisionPolygon2D").set_deferred("disabled", true)
-	var distanceToPlayer: float = calculateDistance(player.position, position);
-	if (distanceToPlayer < 350.0):
-		attackPlayer(delta, distanceToPlayer)
-	else:
-		chill()
+	if (latestAnimationEnded):
+		get_node("weapon/hitBoxFrame6").set_deferred("disabled", true)
+		get_node("weapon/hitBoxFrame7").set_deferred("disabled", true)
+		var distanceToPlayer: float = calculateDistance(player.position, position);
+		if (player.getIsDead() || distanceToPlayer >= 350.0):
+			chill()
+		else:
+			attackPlayer(delta, distanceToPlayer)
+	elif (animatedSprite2D.animation == "attack"):
+		match animatedSprite2D.frame:
+			6:
+				get_node("weapon/hitBoxFrame6").set_deferred("disabled", false)
+			7:
+				get_node("weapon/hitBoxFrame6").set_deferred("disabled", true)
+				get_node("weapon/hitBoxFrame7").set_deferred("disabled", false)
+			_:
+				get_node("weapon/hitBoxFrame6").set_deferred("disabled", true)
+				get_node("weapon/hitBoxFrame7").set_deferred("disabled", true)
 
 func calculateDistance(positionA: Vector2, positionB: Vector2) -> float:
 	return (sqrt(pow(positionB.x - positionA.x, 2) + pow(positionB.y - positionA.y, 2)))
@@ -38,13 +50,16 @@ func attackPlayer(delta: float, distanceToPlayer: float) -> void:
 		fightPlayer()
 	
 func move(delta: float) -> void:
-	var direction: int
+	var newDirection: int
 	if (position.x - player.position.x > 0):
-		direction = -1
-		animatedSprite2D.flip_h = true
+		newDirection = -1
 	else:
-		direction = 1
-		animatedSprite2D.flip_h = false
+		newDirection = 1
+	if (newDirection != direction):
+			animatedSprite2D.flip_h = !animatedSprite2D.flip_h
+			weaponHitBoxFrame6.scale.x = -weaponHitBoxFrame6.scale.x
+			weaponHitBoxFrame7.scale.x = -weaponHitBoxFrame7.scale.x
+			direction = newDirection
 	animatedSprite2D.play("walk")
 	velocity = Vector2(direction, 0) * SPEED * delta
 	move_and_slide()
@@ -63,6 +78,7 @@ func takeDamage() -> void:
 	if (isDead):
 		return ;
 	health -= 50;
+	healthBar.value = health
 	if (health <= 0):
 		die();
 	else:
@@ -76,3 +92,8 @@ func die() -> void:
 	
 func _on_animated_sprite_2d_animation_finished():
 	latestAnimationEnded = true;
+
+
+func _on_weapon_body_entered(body):
+	if (body.is_in_group("player")):
+		body.takeDamage()

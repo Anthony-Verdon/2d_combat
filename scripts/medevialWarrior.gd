@@ -4,14 +4,20 @@ const SPEED = 10000.0
 
 @onready var animatedSprite2D = $AnimatedSprite2D
 @onready var weaponHitBox = $weapon/CollisionPolygon2D
+@onready var healthBar = $healthBar/ProgressBar
 
 var latestAnimationEnded : bool = true
 var direction: int = 1
+var isDead: bool = false
+var health: int = 100
 
 func _ready() -> void:
-	pass
+	healthBar.value = health
 
 func _process(delta) -> void:
+	if (isDead):
+		return
+	
 	if (Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
 		attack();
 	elif (latestAnimationEnded):
@@ -37,14 +43,32 @@ func updateAnimation(input_direction: Vector2) -> void:
 		animatedSprite2D.play("run")
 		if (input_direction.x != direction):
 			animatedSprite2D.flip_h = !animatedSprite2D.flip_h
-			weaponHitBox.scale.x = -1
+			weaponHitBox.scale.x = -weaponHitBox.scale.x
 			direction = input_direction.x
 	else:
 		animatedSprite2D.play("idle")
 
+func takeDamage() -> void:
+	if (isDead || !latestAnimationEnded):
+		return ;
+	health -= 50;
+	healthBar.value = health
+	if (health <= 0):
+		die();
+	else:
+		animatedSprite2D.play("takeDamage")
+		latestAnimationEnded = false
+
+func die() -> void:
+	animatedSprite2D.play("death")
+	isDead = true;
+	get_node("CollisionShape2D").set_deferred("disabled", true)
+
 func _on_animated_sprite_2d_animation_finished():
 	latestAnimationEnded = true;
 
+func getIsDead() -> bool:
+	return (isDead)
 
 func _on_weapon_body_entered(body):
 	if (body.is_in_group("enemy")):

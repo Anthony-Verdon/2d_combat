@@ -1,18 +1,27 @@
-[gd_scene load_steps=52 format=3 uid="uid://bjr0xdwbjdnnw"]
+[gd_scene load_steps=67 format=3 uid="uid://bjr0xdwbjdnnw"]
 
 [ext_resource type="Script" path="res://scripts/medevialWarrior.gd" id="1_yplq1"]
 [ext_resource type="Texture2D" uid="uid://ckrjnruptc0h1" path="res://assets/characters/medieval warrior/attacks/attack1/tile000.png" id="2_6fgr7"]
 [ext_resource type="Texture2D" uid="uid://nkxxgftpx02u" path="res://assets/characters/medieval warrior/attacks/attack1/tile001.png" id="3_cvfyo"]
 [ext_resource type="Texture2D" uid="uid://cg6dsa577ookh" path="res://assets/characters/medieval warrior/attacks/attack1/tile002.png" id="4_y44dh"]
 [ext_resource type="Texture2D" uid="uid://d226hmo0jopop" path="res://assets/characters/medieval warrior/attacks/attack1/tile003.png" id="5_6bd5t"]
+[ext_resource type="Texture2D" uid="uid://b8200k7r0aesb" path="res://assets/characters/medieval warrior/death/tile000.png" id="6_qw6oc"]
 [ext_resource type="Texture2D" uid="uid://dwgu84npvsw5i" path="res://assets/characters/medieval warrior/idle/tile000.png" id="6_tl5q7"]
 [ext_resource type="Texture2D" uid="uid://b3ptuhd4crq07" path="res://assets/characters/medieval warrior/idle/tile001.png" id="7_cdsut"]
+[ext_resource type="Texture2D" uid="uid://cmu0gvkbuvo67" path="res://assets/characters/medieval warrior/death/tile001.png" id="7_wyq5u"]
+[ext_resource type="Texture2D" uid="uid://bi3ad3icf1rfx" path="res://assets/characters/medieval warrior/death/tile002.png" id="8_ghjww"]
 [ext_resource type="Texture2D" uid="uid://j5l1f4uls2sb" path="res://assets/characters/medieval warrior/idle/tile002.png" id="8_l3hyh"]
 [ext_resource type="Texture2D" uid="uid://cwt8l864bpo4v" path="res://assets/characters/medieval warrior/idle/tile003.png" id="9_3mhlw"]
+[ext_resource type="Texture2D" uid="uid://o3m3qnf2n1kv" path="res://assets/characters/medieval warrior/death/tile003.png" id="9_mdfog"]
+[ext_resource type="Texture2D" uid="uid://rd5yg5uioemm" path="res://assets/characters/medieval warrior/death/tile004.png" id="10_2cmus"]
 [ext_resource type="Texture2D" uid="uid://0wkj8bn57qic" path="res://assets/characters/medieval warrior/idle/tile004.png" id="10_sjhxk"]
 [ext_resource type="Texture2D" uid="uid://dsbbytpcq0164" path="res://assets/characters/medieval warrior/idle/tile005.png" id="11_elkhl"]
+[ext_resource type="Texture2D" uid="uid://bi71vdipid7ok" path="res://assets/characters/medieval warrior/death/tile005.png" id="11_ldao7"]
 [ext_resource type="Texture2D" uid="uid://dragwkjrlgrmk" path="res://assets/characters/medieval warrior/run/tile000.png" id="12_l0ois"]
+[ext_resource type="Texture2D" uid="uid://d0t3m6danhi0y" path="res://assets/characters/medieval warrior/death/tile006.png" id="12_mr0wb"]
 [ext_resource type="Texture2D" uid="uid://dcpfgsqjb6gnt" path="res://assets/characters/medieval warrior/run/tile001.png" id="13_7yeb3"]
+[ext_resource type="Texture2D" uid="uid://dyithdgwaanno" path="res://assets/characters/medieval warrior/death/tile007.png" id="13_fb7ki"]
+[ext_resource type="Texture2D" uid="uid://bt4fnwqehj24g" path="res://assets/characters/medieval warrior/death/tile008.png" id="14_4p6rx"]
 [ext_resource type="Texture2D" uid="uid://bxymcxl7l5tl7" path="res://assets/characters/medieval warrior/run/tile002.png" id="14_djqax"]
 [ext_resource type="Texture2D" uid="uid://mig5tmpl0iev" path="res://assets/characters/medieval warrior/run/tile003.png" id="15_13ssy"]
 [ext_resource type="Texture2D" uid="uid://br62iirvhklrq" path="res://assets/characters/medieval warrior/run/tile004.png" id="16_o0078"]
@@ -36,9 +45,12 @@
 [ext_resource type="Texture2D" uid="uid://s7am4viijekt" path="res://assets/enemies/Skeleton/attack/tile005.png" id="26_ooenr"]
 [ext_resource type="Texture2D" uid="uid://p83mdn543f8s" path="res://assets/enemies/Skeleton/attack/tile006.png" id="27_c2jk1"]
 [ext_resource type="Texture2D" uid="uid://867vj6vq4kbb" path="res://assets/enemies/Skeleton/attack/tile007.png" id="28_7hes8"]
+[ext_resource type="Texture2D" uid="uid://c3ksqffqi4h1k" path="res://assets/characters/medieval warrior/takeDamage/tile000.png" id="29_8jrfd"]
 [ext_resource type="Texture2D" uid="uid://6ioi0t1jgpca" path="res://assets/enemies/Skeleton/takeDamage/tile000.png" id="29_wkvbc"]
 [ext_resource type="Texture2D" uid="uid://bxbnoehbppbki" path="res://assets/enemies/Skeleton/takeDamage/tile001.png" id="30_1mt6v"]
+[ext_resource type="Texture2D" uid="uid://cvu0kwm4y6du7" path="res://assets/characters/medieval warrior/takeDamage/tile001.png" id="30_if3yi"]
 [ext_resource type="Texture2D" uid="uid://dswrrq2v2ejuv" path="res://assets/enemies/Skeleton/takeDamage/tile002.png" id="31_vc310"]
+[ext_resource type="Texture2D" uid="uid://brkuphdtju0tr" path="res://assets/characters/medieval warrior/takeDamage/tile002.png" id="31_ysl3o"]
 [ext_resource type="Texture2D" uid="uid://b6ecoeydjjwym" path="res://assets/enemies/Skeleton/takeDamage/tile003.png" id="32_ho4rm"]
 [ext_resource type="Texture2D" uid="uid://dlqk8od735aup" path="res://assets/enemies/Skeleton/shield/tile000.png" id="37_oc6ia"]
 [ext_resource type="Texture2D" uid="uid://dj1cjdjlsu1x2" path="res://assets/enemies/Skeleton/shield/tile001.png" id="38_go4n4"]
@@ -70,6 +82,38 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_qw6oc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wyq5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ghjww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mdfog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2cmus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ldao7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_mr0wb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fb7ki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4p6rx")
+}],
+"loop": false,
+"name": &"death",
 "speed": 5.0
 }, {
 "frames": [{
@@ -123,7 +167,31 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_8jrfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_if3yi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_ysl3o")
+}],
+"loop": false,
+"name": &"takeDamage",
+"speed": 5.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37ovx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fcrds"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_y0kej"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_37ovx")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_fcrds")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_somex"]
 animations = [{
@@ -152,7 +220,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("28_7hes8")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 5.0
 }, {
@@ -244,7 +312,7 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 
-[node name="medevialWarrior" type="CharacterBody2D" parent="."]
+[node name="medevialWarrior" type="CharacterBody2D" parent="." groups=["player"]]
 texture_filter = 1
 position = Vector2(-214, 136)
 script = ExtResource("1_yplq1")
@@ -255,7 +323,7 @@ shape = SubResource("CapsuleShape2D_iei1d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="medevialWarrior"]
 sprite_frames = SubResource("SpriteFrames_rgexc")
-animation = &"idle"
+animation = &"takeDamage"
 
 [node name="weapon" type="Area2D" parent="medevialWarrior"]
 
@@ -265,9 +333,29 @@ polygon = PackedVector2Array(50, 23, 76, 38, 88, 20, 89, -13, 75, -47, 42, -65, 
 
 [node name="Camera2D" type="Camera2D" parent="medevialWarrior"]
 
+[node name="healthBar" type="Control" parent="medevialWarrior"]
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_top = -49.0
+offset_right = -36.0
+offset_bottom = -49.0
+grow_horizontal = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="medevialWarrior/healthBar"]
+offset_right = 4.0
+offset_bottom = 27.0
+scale = Vector2(17.7681, 0.531691)
+theme = SubResource("Theme_y0kej")
+value = 100.0
+show_percentage = false
+
 [node name="skeleton" type="CharacterBody2D" parent="." groups=["enemy"]]
 texture_filter = 1
-position = Vector2(-276, 164)
+position = Vector2(138, 164)
 script = ExtResource("20_obc8j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="skeleton"]
@@ -279,17 +367,39 @@ shape = SubResource("CapsuleShape2D_iei1d")
 position = Vector2(0, -9)
 scale = Vector2(1.38283, 1.38283)
 sprite_frames = SubResource("SpriteFrames_somex")
-animation = &"attack"
-frame = 7
+animation = &"idle"
 
 [node name="weapon" type="Area2D" parent="skeleton"]
-position = Vector2(62, -28)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="skeleton/weapon"]
+[node name="hitBoxFrame6" type="CollisionPolygon2D" parent="skeleton/weapon"]
 build_mode = 1
-polygon = PackedVector2Array(50, 23, 76, 38, 88, 20, 89, -13, 75, -47, 42, -65, 8, -66, -21, -46, 8, -53, 34, -42, 57, -8, 57, 15)
+polygon = PackedVector2Array(0, 0, 20, -8, 40, -6, 70, -16, 71, -35, 34, -47, 75, -43, 98, -30, 100, -10, 81, 9, 42, 14, 15, 8)
+
+[node name="hitBoxFrame7" type="CollisionPolygon2D" parent="skeleton/weapon"]
+build_mode = 1
+polygon = PackedVector2Array(0, 0, 20, -7, 50, 5, 79, 4, 99, -12, 95, -31, 102, -11, 83, 6, 39, 14, 15, 9)
+
+[node name="healthBar" type="Control" parent="skeleton"]
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = -69.0
+offset_right = -24.0
+offset_bottom = -69.0
+grow_horizontal = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="skeleton/healthBar"]
+offset_right = 4.0
+offset_bottom = 27.0
+scale = Vector2(17.7681, 0.531691)
+theme = SubResource("Theme_y0kej")
+value = 100.0
+show_percentage = false
 
 [connection signal="animation_finished" from="medevialWarrior/AnimatedSprite2D" to="medevialWarrior" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="medevialWarrior/weapon" to="medevialWarrior" method="_on_weapon_body_entered"]
 [connection signal="animation_finished" from="skeleton/AnimatedSprite2D" to="skeleton" method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="body_entered" from="skeleton/weapon" to="medevialWarrior" method="_on_weapon_body_entered"]
+[connection signal="body_entered" from="skeleton/weapon" to="skeleton" method="_on_weapon_body_entered"]
