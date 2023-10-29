@@ -17,34 +17,34 @@
 [ext_resource type="Texture2D" uid="uid://0wkj8bn57qic" path="res://assets/characters/medieval warrior/idle/tile004.png" id="10_sjhxk"]
 [ext_resource type="Texture2D" uid="uid://dsbbytpcq0164" path="res://assets/characters/medieval warrior/idle/tile005.png" id="11_elkhl"]
 [ext_resource type="Texture2D" uid="uid://bi71vdipid7ok" path="res://assets/characters/medieval warrior/death/tile005.png" id="11_ldao7"]
-[ext_resource type="Texture2D" uid="uid://dragwkjrlgrmk" path="res://assets/characters/medieval warrior/run/tile000.png" id="12_l0ois"]
 [ext_resource type="Texture2D" uid="uid://d0t3m6danhi0y" path="res://assets/characters/medieval warrior/death/tile006.png" id="12_mr0wb"]
-[ext_resource type="Texture2D" uid="uid://dcpfgsqjb6gnt" path="res://assets/characters/medieval warrior/run/tile001.png" id="13_7yeb3"]
 [ext_resource type="Texture2D" uid="uid://dyithdgwaanno" path="res://assets/characters/medieval warrior/death/tile007.png" id="13_fb7ki"]
 [ext_resource type="Texture2D" uid="uid://bt4fnwqehj24g" path="res://assets/characters/medieval warrior/death/tile008.png" id="14_4p6rx"]
-[ext_resource type="Texture2D" uid="uid://bxymcxl7l5tl7" path="res://assets/characters/medieval warrior/run/tile002.png" id="14_djqax"]
-[ext_resource type="Texture2D" uid="uid://mig5tmpl0iev" path="res://assets/characters/medieval warrior/run/tile003.png" id="15_13ssy"]
-[ext_resource type="Texture2D" uid="uid://br62iirvhklrq" path="res://assets/characters/medieval warrior/run/tile004.png" id="16_o0078"]
-[ext_resource type="Texture2D" uid="uid://cmuuqvxnv0i1y" path="res://assets/characters/medieval warrior/run/tile005.png" id="17_loliq"]
-[ext_resource type="Texture2D" uid="uid://dtb0epecn2qjj" path="res://assets/characters/medieval warrior/run/tile006.png" id="18_fr2mc"]
-[ext_resource type="Texture2D" uid="uid://ctwatt30fxkx3" path="res://assets/characters/medieval warrior/run/tile007.png" id="19_0l4kn"]
 [ext_resource type="Texture2D" uid="uid://b45vqo0ow6sar" path="res://assets/enemies/Skeleton/idle/tile000.png" id="20_aqcjm"]
 [ext_resource type="Script" path="res://scripts/skeleton.gd" id="20_obc8j"]
 [ext_resource type="Texture2D" uid="uid://dqnowl4vrugaa" path="res://assets/enemies/Skeleton/idle/tile001.png" id="21_2lka5"]
 [ext_resource type="Texture2D" uid="uid://bplbo1iwbgouf" path="res://assets/enemies/Skeleton/attack/tile000.png" id="21_6sp7c"]
+[ext_resource type="Texture2D" uid="uid://dragwkjrlgrmk" path="res://assets/characters/medieval warrior/run/run1/tile000.png" id="21_q13ys"]
 [ext_resource type="Texture2D" uid="uid://k75jhtarlmca" path="res://assets/enemies/Skeleton/death/tile000.png" id="21_voodb"]
 [ext_resource type="Texture2D" uid="uid://cvb58jw6dc7ji" path="res://assets/enemies/Skeleton/attack/tile001.png" id="22_2td3s"]
 [ext_resource type="Texture2D" uid="uid://bx8tbsb7b35ru" path="res://assets/enemies/Skeleton/idle/tile002.png" id="22_auvuh"]
 [ext_resource type="Texture2D" uid="uid://bw0636lal65by" path="res://assets/enemies/Skeleton/death/tile001.png" id="22_s1xii"]
+[ext_resource type="Texture2D" uid="uid://dcpfgsqjb6gnt" path="res://assets/characters/medieval warrior/run/run1/tile001.png" id="22_vx4jr"]
 [ext_resource type="Texture2D" uid="uid://c802vlhq50fw7" path="res://assets/enemies/Skeleton/death/tile002.png" id="23_e453g"]
 [ext_resource type="Texture2D" uid="uid://clq4g8y3movwd" path="res://assets/enemies/Skeleton/idle/tile003.png" id="23_hcepl"]
+[ext_resource type="Texture2D" uid="uid://bxymcxl7l5tl7" path="res://assets/characters/medieval warrior/run/run1/tile002.png" id="23_l5oij"]
 [ext_resource type="Texture2D" uid="uid://cqyodtdsvx2pu" path="res://assets/enemies/Skeleton/attack/tile002.png" id="23_u7n6d"]
+[ext_resource type="Texture2D" uid="uid://mig5tmpl0iev" path="res://assets/characters/medieval warrior/run/run1/tile003.png" id="24_0qfke"]
 [ext_resource type="Texture2D" uid="uid://dsdwlfgwsg8r0" path="res://assets/enemies/Skeleton/attack/tile003.png" id="24_ehbhb"]
 [ext_resource type="Texture2D" uid="uid://cv5dpgkbwhvn6" path="res://assets/enemies/Skeleton/death/tile003.png" id="24_sr30h"]
 [ext_resource type="Texture2D" uid="uid://2dnxhkqil06" path="res://assets/enemies/Skeleton/attack/tile004.png" id="25_6obce"]
+[ext_resource type="Texture2D" uid="uid://br62iirvhklrq" path="res://assets/characters/medieval warrior/run/run1/tile004.png" id="25_g68tw"]
+[ext_resource type="Texture2D" uid="uid://cmuuqvxnv0i1y" path="res://assets/characters/medieval warrior/run/run1/tile005.png" id="26_lqkgu"]
 [ext_resource type="Texture2D" uid="uid://s7am4viijekt" path="res://assets/enemies/Skeleton/attack/tile005.png" id="26_ooenr"]
+[ext_resource type="Texture2D" uid="uid://dtb0epecn2qjj" path="res://assets/characters/medieval warrior/run/run1/tile006.png" id="27_0u230"]
 [ext_resource type="Texture2D" uid="uid://p83mdn543f8s" path="res://assets/enemies/Skeleton/attack/tile006.png" id="27_c2jk1"]
 [ext_resource type="Texture2D" uid="uid://867vj6vq4kbb" path="res://assets/enemies/Skeleton/attack/tile007.png" id="28_7hes8"]
+[ext_resource type="Texture2D" uid="uid://ctwatt30fxkx3" path="res://assets/characters/medieval warrior/run/run1/tile007.png" id="28_xf0yx"]
 [ext_resource type="Texture2D" uid="uid://c3ksqffqi4h1k" path="res://assets/characters/medieval warrior/takeDamage/tile000.png" id="29_8jrfd"]
 [ext_resource type="Texture2D" uid="uid://6ioi0t1jgpca" path="res://assets/enemies/Skeleton/takeDamage/tile000.png" id="29_wkvbc"]
 [ext_resource type="Texture2D" uid="uid://bxbnoehbppbki" path="res://assets/enemies/Skeleton/takeDamage/tile001.png" id="30_1mt6v"]
@@ -141,28 +141,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("12_l0ois")
+"texture": ExtResource("21_q13ys")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_7yeb3")
+"texture": ExtResource("22_vx4jr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_djqax")
+"texture": ExtResource("23_l5oij")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_13ssy")
+"texture": ExtResource("24_0qfke")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_o0078")
+"texture": ExtResource("25_g68tw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_loliq")
+"texture": ExtResource("26_lqkgu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_fr2mc")
+"texture": ExtResource("27_0u230")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_0l4kn")
+"texture": ExtResource("28_xf0yx")
 }],
 "loop": true,
 "name": &"run",
@@ -271,7 +271,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("40_1pv3i")
 }],
-"loop": true,
+"loop": false,
 "name": &"shield",
 "speed": 5.0
 }, {
@@ -367,7 +367,7 @@ shape = SubResource("CapsuleShape2D_iei1d")
 position = Vector2(0, -9)
 scale = Vector2(1.38283, 1.38283)
 sprite_frames = SubResource("SpriteFrames_somex")
-animation = &"idle"
+animation = &"shield"
 
 [node name="weapon" type="Area2D" parent="skeleton"]
 

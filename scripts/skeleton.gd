@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 2500.0
+const HEALTH_MAX = 100
 
 @onready var animatedSprite2D = $AnimatedSprite2D
 @onready var hitbox = $CollisionShape2D
@@ -14,6 +15,9 @@ var health: int = 100;
 var isDead: bool = false;
 var latestAnimationEnded : bool = true
 var direction: int = 1
+var rng: RandomNumberGenerator = RandomNumberGenerator.new()
+var protected: bool = false
+
 func _ready() -> void:
 	healthBar.value = health
 
@@ -24,6 +28,7 @@ func _process(delta: float) -> void:
 	if (latestAnimationEnded):
 		get_node("weapon/hitBoxFrame6").set_deferred("disabled", true)
 		get_node("weapon/hitBoxFrame7").set_deferred("disabled", true)
+		protected = false
 		var distanceToPlayer: float = calculateDistance(player.position, position);
 		if (player.getIsDead() || distanceToPlayer >= 350.0):
 			chill()
@@ -65,17 +70,29 @@ func move(delta: float) -> void:
 	move_and_slide()
 
 func fightPlayer() -> void:
-	attack()
+	#idea : the lower the health of the enemy is, the slower he will take decision
+	var random = rng.randi_range(0, 1)
+	match random:
+		0:
+			attack()
+		1:
+			shield()
 
 func attack() -> void:
 	animatedSprite2D.play("attack")
 	latestAnimationEnded = false;
 
+func shield() -> void:
+	animatedSprite2D.play("shield")
+	protected = true;
+	latestAnimationEnded = false;
+	
 func chill() -> void:
 	animatedSprite2D.play("idle")
 	
 func takeDamage() -> void:
-	if (isDead):
+	#idea : add a parameter "attackDirection", and if the enemy is protected and face the good direction, he protect himself
+	if (isDead || protected):
 		return ;
 	health -= 50;
 	healthBar.value = health
