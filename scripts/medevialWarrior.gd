@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+const HEALTH_MAX: float = 100
+const ENERGY_MAX: float = 100
 const SPEED: float = 10000
 const JUMP_HEIGHT: float  = 200
 const JUMP_TIME_TO_PEAK: float = 0.4
@@ -12,26 +14,42 @@ const ROLL_DISTANCE: float = 150
 @onready var animatedSprite2D = $AnimatedSprite2D
 @onready var weaponHitBox = $weapon/CollisionPolygon2D
 @onready var healthBar = $healthBar/ProgressBar
+@onready var energyBar = $energyBar/ProgressBar
 
 var velocity_: Vector2 = Vector2.ZERO
 var latestAnimationEnded : bool = true
 var actual_direction: int = 1
 var isDead: bool = false
-var health: int = 100
+var health: float = HEALTH_MAX
+var energy: float = ENERGY_MAX
+var timer: float = 0
 
 func _ready() -> void:
 	healthBar.value = health
+	energyBar.value = energy
 
 func _process(delta) -> void:
 	if (isDead):
 		return
 	
+	print(energy)
 	var direction: Vector2 = Vector2(Input.get_axis("ui_left", "ui_right"), 0)
 	if (is_on_floor()):
 		checkPlayerAction()
+	regenEnergy(delta)
 	updatePosition(direction, delta)
 	updateAnimation(direction)
 	updateWeaponHitbox()
+
+func regenEnergy(delta: float) -> void:
+	timer += delta
+	if (timer < 5.0):
+		return
+	timer -= 5.0
+	energy += 10
+	if (energy > 100):
+		energy = 100
+	energyBar.value = energy
 
 func checkPlayerAction() -> void:
 	if (Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
@@ -42,17 +60,29 @@ func checkPlayerAction() -> void:
 		roll();
 
 func attack() -> void:
+	if (!latestAnimationEnded):
+		return
 	animatedSprite2D.play("attack1")
 	latestAnimationEnded = false;
+	energy -= 10
+	energyBar.value = energy
 
 func jump() -> void:
+	if (!is_on_floor()):
+		return
 	velocity.y = JUMP_VELOCITY
+	energy -= 20
+	energyBar.value = energy
 
 func roll() -> void:
+	if (!latestAnimationEnded):
+		return
 	animatedSprite2D.play("roll")
 	latestAnimationEnded = false;
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position", Vector2(position.x + ROLL_DISTANCE * actual_direction, position.y), 0.5)
+	energy -= 10
+	energyBar.value = energy
 	
 func updatePosition(direction: Vector2, delta: float) -> void:
 	if (latestAnimationEnded):
@@ -73,7 +103,7 @@ func updateAnimation(direction: Vector2) -> void:
 		if (direction.x != actual_direction):
 			animatedSprite2D.flip_h = !animatedSprite2D.flip_h
 			weaponHitBox.scale.x = -weaponHitBox.scale.x
-			actual_direction = direction.x
+			actual_direction = int(direction.x)
 	else:
 		animatedSprite2D.play("idle")
 	if not is_on_floor():
@@ -98,6 +128,8 @@ func takeDamage() -> void:
 	else:
 		animatedSprite2D.play("takeDamage")
 		latestAnimationEnded = false
+	energy -= 5
+	energyBar.value = energy
 
 func die() -> void:
 	animatedSprite2D.play("death")

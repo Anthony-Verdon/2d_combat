@@ -3,6 +3,12 @@ extends CharacterBody2D
 
 const SPEED = 2500.0
 const HEALTH_MAX = 100
+const JUMP_HEIGHT: float  = 200
+const JUMP_TIME_TO_PEAK: float = 0.4
+const JUMP_TIME_TO_DESCENT: float = 0.5
+const JUMP_VELOCITY: float = (2.0 * JUMP_HEIGHT) / JUMP_TIME_TO_PEAK * -1.0
+const JUMP_GRAVITY: float = (-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_PEAK * JUMP_TIME_TO_PEAK) * -1.0
+const FALL_GRAVITY: float = (-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_DESCENT * JUMP_TIME_TO_DESCENT) * -1.0
 
 @onready var animatedSprite2D = $AnimatedSprite2D
 @onready var hitbox = $CollisionShape2D
@@ -11,7 +17,7 @@ const HEALTH_MAX = 100
 @onready var healthBar = $healthBar/ProgressBar
 @onready var player = get_tree().root.get_node("Node2D/medevialWarrior")
 
-var health: int = 100;
+var health: int = HEALTH_MAX;
 var isDead: bool = false;
 var latestAnimationEnded : bool = true
 var direction: int = 1
@@ -66,7 +72,9 @@ func move(delta: float) -> void:
 			weaponHitBoxFrame7.scale.x = -weaponHitBoxFrame7.scale.x
 			direction = newDirection
 	animatedSprite2D.play("walk")
-	velocity = Vector2(direction, 0) * SPEED * delta
+	velocity.x = direction * SPEED
+	velocity.y = FALL_GRAVITY
+	velocity = velocity * delta
 	move_and_slide()
 
 func fightPlayer() -> void:
