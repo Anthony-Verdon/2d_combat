@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3 uid="uid://bjr0xdwbjdnnw"]
+[gd_scene load_steps=97 format=3 uid="uid://bjr0xdwbjdnnw"]
 
 [ext_resource type="Script" path="res://scripts/medevialWarrior.gd" id="1_yplq1"]
 [ext_resource type="Texture2D" uid="uid://ckrjnruptc0h1" path="res://assets/characters/medieval warrior/attacks/attack1/tile000.png" id="2_6fgr7"]
@@ -90,6 +90,7 @@
 [ext_resource type="Texture2D" uid="uid://s7dk1hqft3o6" path="res://assets/characters/medieval warrior/runs/run2/tile007.png" id="56_fr7ia"]
 [ext_resource type="Texture2D" uid="uid://dsqefnuehfqmv" path="res://assets/characters/medieval warrior/slide/tile000.png" id="57_cigj7"]
 [ext_resource type="Texture2D" uid="uid://gk4q2e2rth0r" path="res://assets/characters/medieval warrior/slide/tile001.png" id="58_k6kt0"]
+[ext_resource type="Texture2D" uid="uid://crlswmstpxh7l" path="res://assets/wall_fill.png" id="62_e4guh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iei1d"]
 radius = 15.0
@@ -343,26 +344,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37ovx"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fcrds"]
-bg_color = Color(1, 0, 0, 1)
-
-[sub_resource type="Theme" id="Theme_y0kej"]
-ProgressBar/styles/background = SubResource("StyleBoxFlat_37ovx")
-ProgressBar/styles/fill = SubResource("StyleBoxFlat_fcrds")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n0p0j"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82odj"]
-bg_color = Color(0.768627, 0.909804, 0, 1)
-
-[sub_resource type="Theme" id="Theme_mfhmj"]
-ProgressBar/styles/background = SubResource("StyleBoxFlat_n0p0j")
-ProgressBar/styles/fill = SubResource("StyleBoxFlat_82odj")
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7se5u"]
 radius = 17.0
 height = 53.2258
@@ -515,7 +496,7 @@ metadata/_edit_lock_ = true
 [node name="Camera2D" type="Camera2D" parent="medevialWarrior"]
 metadata/_edit_lock_ = true
 
-[node name="healthBar" type="Control" parent="medevialWarrior"]
+[node name="statisticsBars" type="Control" parent="medevialWarrior"]
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 5
@@ -526,49 +507,43 @@ offset_top = -49.0
 offset_right = -36.0
 offset_bottom = -49.0
 grow_horizontal = 2
-metadata/_edit_lock_ = true
+scale = Vector2(1.00649, 1.45031)
 
-[node name="ProgressBar" type="ProgressBar" parent="medevialWarrior/healthBar"]
+[node name="healthBar" type="TextureProgressBar" parent="medevialWarrior/statisticsBars"]
 layout_mode = 0
-offset_right = 4.0
-offset_bottom = 27.0
-scale = Vector2(17.7681, 0.531691)
-theme = SubResource("Theme_y0kej")
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2.20987, 0.202182)
+step = 0.01
 value = 100.0
-show_percentage = false
-metadata/_edit_lock_ = true
+texture_progress = ExtResource("62_e4guh")
+tint_under = Color(1, 1, 1, 0)
+tint_over = Color(1, 1, 1, 0)
+tint_progress = Color(1, 0, 0, 1)
 
-[node name="energyBar" type="Control" parent="medevialWarrior"]
-layout_direction = 2
-layout_mode = 3
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -36.0
-offset_top = -32.0
-offset_right = -36.0
-offset_bottom = -32.0
-grow_horizontal = 2
-metadata/_edit_lock_ = true
-
-[node name="ProgressBar" type="ProgressBar" parent="medevialWarrior/energyBar"]
+[node name="energyBar" type="TextureProgressBar" parent="medevialWarrior/statisticsBars"]
 layout_mode = 0
-offset_right = 4.0
-offset_bottom = 27.0
-scale = Vector2(17.7681, 0.091691)
-theme = SubResource("Theme_mfhmj")
-value = 60.0
-show_percentage = false
+offset_top = 6.89508
+offset_right = 40.0
+offset_bottom = 46.8951
+scale = Vector2(2.20987, 0.105957)
+step = 0.01
+value = 100.0
+texture_progress = ExtResource("62_e4guh")
+tint_under = Color(1, 1, 1, 0)
+tint_over = Color(1, 1, 1, 0)
+tint_progress = Color(1, 1, 0, 1)
 
 [node name="skeleton" type="CharacterBody2D" parent="." groups=["enemy"]]
 texture_filter = 1
-position = Vector2(-81, 177)
+position = Vector2(300, 176)
 script = ExtResource("20_obc8j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="skeleton"]
 position = Vector2(4, -10)
 scale = Vector2(1, 1.4)
 shape = SubResource("CapsuleShape2D_7se5u")
+metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="skeleton"]
 position = Vector2(0, -9)
@@ -590,28 +565,30 @@ build_mode = 1
 polygon = PackedVector2Array(0, 0, 20, -7, 50, 5, 79, 4, 99, -12, 95, -31, 102, -11, 83, 6, 39, 14, 15, 9)
 metadata/_edit_lock_ = true
 
-[node name="healthBar" type="Control" parent="skeleton"]
+[node name="statisticsBars" type="Control" parent="skeleton"]
 layout_direction = 2
 layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -24.0
-offset_top = -69.0
-offset_right = -24.0
-offset_bottom = -69.0
+offset_left = -28.0
+offset_top = -65.0
+offset_right = -28.0
+offset_bottom = -65.0
 grow_horizontal = 2
-metadata/_edit_lock_ = true
+scale = Vector2(1.00649, 1.45031)
 
-[node name="ProgressBar" type="ProgressBar" parent="skeleton/healthBar"]
+[node name="healthBar" type="TextureProgressBar" parent="skeleton/statisticsBars"]
 layout_mode = 0
-offset_right = 4.0
-offset_bottom = 27.0
-scale = Vector2(17.7681, 0.531691)
-theme = SubResource("Theme_y0kej")
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2.20987, 0.202182)
+step = 0.01
 value = 100.0
-show_percentage = false
-metadata/_edit_lock_ = true
+texture_progress = ExtResource("62_e4guh")
+tint_under = Color(1, 1, 1, 0)
+tint_over = Color(1, 1, 1, 0)
+tint_progress = Color(1, 0, 0, 1)
 
 [node name="floor" type="StaticBody2D" parent="."]
 position = Vector2(-268, 220)

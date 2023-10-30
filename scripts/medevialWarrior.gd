@@ -13,8 +13,8 @@ const ROLL_DISTANCE: float = 150
 
 @onready var animatedSprite2D = $AnimatedSprite2D
 @onready var weaponHitBox = $weapon/CollisionPolygon2D
-@onready var healthBar = $healthBar/ProgressBar
-@onready var energyBar = $energyBar/ProgressBar
+@onready var healthBar = $statisticsBars/healthBar
+@onready var energyBar = $statisticsBars/energyBar
 
 var velocity_: Vector2 = Vector2.ZERO
 var latestAnimationEnded : bool = true
@@ -23,7 +23,8 @@ var isDead: bool = false
 var health: float = HEALTH_MAX
 var energy: float = ENERGY_MAX
 var timer: float = 0
-
+var timer2: float = 0
+var health_tmp = HEALTH_MAX
 func _ready() -> void:
 	healthBar.value = health
 	energyBar.value = energy
@@ -31,8 +32,6 @@ func _ready() -> void:
 func _process(delta) -> void:
 	if (isDead):
 		return
-	
-	print(energy)
 	var direction: Vector2 = Vector2(Input.get_axis("ui_left", "ui_right"), 0)
 	if (is_on_floor()):
 		checkPlayerAction()
@@ -43,9 +42,9 @@ func _process(delta) -> void:
 
 func regenEnergy(delta: float) -> void:
 	timer += delta
-	if (timer < 5.0):
+	if (timer < 3.0):
 		return
-	timer -= 5.0
+	timer -= 3.0
 	energy += 10
 	if (energy > 100):
 		energy = 100

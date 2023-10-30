@@ -14,7 +14,7 @@ const FALL_GRAVITY: float = (-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_DESCENT * JUMP_
 @onready var hitbox = $CollisionShape2D
 @onready var weaponHitBoxFrame6 = $weapon/hitBoxFrame6
 @onready var weaponHitBoxFrame7 = $weapon/hitBoxFrame7
-@onready var healthBar = $healthBar/ProgressBar
+@onready var healthBar = $statisticsBars/healthBar
 @onready var player = get_tree().root.get_node("Node2D/medevialWarrior")
 
 var health: int = HEALTH_MAX;
