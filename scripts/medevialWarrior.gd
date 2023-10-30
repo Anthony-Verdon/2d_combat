@@ -60,7 +60,7 @@ func checkPlayerAction() -> void:
 		roll();
 
 func attack() -> void:
-	if (!latestAnimationEnded):
+	if (!latestAnimationEnded || energy < 10):
 		return
 	animatedSprite2D.play("attack1")
 	latestAnimationEnded = false;
@@ -68,14 +68,14 @@ func attack() -> void:
 	energyBar.value = energy
 
 func jump() -> void:
-	if (!is_on_floor()):
+	if (!is_on_floor()  || energy < 20):
 		return
 	velocity.y = JUMP_VELOCITY
 	energy -= 20
 	energyBar.value = energy
 
 func roll() -> void:
-	if (!latestAnimationEnded):
+	if (!latestAnimationEnded || energy < 10):
 		return
 	animatedSprite2D.play("roll")
 	latestAnimationEnded = false;
