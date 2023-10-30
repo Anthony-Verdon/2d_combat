@@ -7,6 +7,7 @@ const JUMP_TIME_TO_DESCENT: float = 0.5
 const JUMP_VELOCITY: float = (2.0 * JUMP_HEIGHT) / JUMP_TIME_TO_PEAK * -1.0
 const JUMP_GRAVITY: float = (-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_PEAK * JUMP_TIME_TO_PEAK) * -1.0
 const FALL_GRAVITY: float = (-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_DESCENT * JUMP_TIME_TO_DESCENT) * -1.0
+const ROLL_DISTANCE: float = 150
 
 @onready var animatedSprite2D = $AnimatedSprite2D
 @onready var weaponHitBox = $weapon/CollisionPolygon2D
@@ -37,6 +38,8 @@ func checkPlayerAction() -> void:
 		attack();
 	elif (Input.is_key_pressed(KEY_SPACE)):
 		jump();
+	elif (Input.is_key_pressed(KEY_SHIFT)):
+		roll();
 
 func attack() -> void:
 	animatedSprite2D.play("attack1")
@@ -45,8 +48,17 @@ func attack() -> void:
 func jump() -> void:
 	velocity.y = JUMP_VELOCITY
 
+func roll() -> void:
+	animatedSprite2D.play("roll")
+	latestAnimationEnded = false;
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "position", Vector2(position.x + ROLL_DISTANCE * actual_direction, position.y), 0.5)
+	
 func updatePosition(direction: Vector2, delta: float) -> void:
-	velocity.x = direction.x * SPEED * delta
+	if (latestAnimationEnded):
+		velocity.x = direction.x * SPEED * delta
+	else:
+		velocity.x = 0
 	if (velocity.y < 0):
 		velocity.y += JUMP_GRAVITY * delta
 	else:
@@ -77,7 +89,7 @@ func updateWeaponHitbox() -> void:
 		get_node("weapon/CollisionPolygon2D").set_deferred("disabled", false)
 		
 func takeDamage() -> void:
-	if (isDead || !latestAnimationEnded):
+	if (isDead || animatedSprite2D.animation == "takeDamage" || animatedSprite2D.animation == "roll"):
 		return ;
 	health -= 50;
 	healthBar.value = health
@@ -93,7 +105,6 @@ func die() -> void:
 	get_node("CollisionShape2D").set_deferred("disabled", true)
 
 func _on_animated_sprite_2d_animation_finished():
-	print(animatedSprite2D.animation)
 	latestAnimationEnded = true;
 
 func _on_weapon_body_entered(body):
