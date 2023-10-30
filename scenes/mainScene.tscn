@@ -90,7 +90,7 @@
 [ext_resource type="Texture2D" uid="uid://s7dk1hqft3o6" path="res://assets/characters/medieval warrior/runs/run2/tile007.png" id="56_fr7ia"]
 [ext_resource type="Texture2D" uid="uid://dsqefnuehfqmv" path="res://assets/characters/medieval warrior/slide/tile000.png" id="57_cigj7"]
 [ext_resource type="Texture2D" uid="uid://gk4q2e2rth0r" path="res://assets/characters/medieval warrior/slide/tile001.png" id="58_k6kt0"]
-[ext_resource type="Texture2D" uid="uid://crlswmstpxh7l" path="res://assets/wall_fill.png" id="62_e4guh"]
+[ext_resource type="Texture2D" uid="uid://crlswmstpxh7l" path="res://assets/white_texture.png" id="62_f1o5k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iei1d"]
 radius = 15.0
@@ -516,9 +516,7 @@ offset_bottom = 40.0
 scale = Vector2(2.20987, 0.202182)
 step = 0.01
 value = 100.0
-texture_progress = ExtResource("62_e4guh")
-tint_under = Color(1, 1, 1, 0)
-tint_over = Color(1, 1, 1, 0)
+texture_progress = ExtResource("62_f1o5k")
 tint_progress = Color(1, 0, 0, 1)
 
 [node name="energyBar" type="TextureProgressBar" parent="medevialWarrior/statisticsBars"]
@@ -529,9 +527,7 @@ offset_bottom = 46.8951
 scale = Vector2(2.20987, 0.105957)
 step = 0.01
 value = 100.0
-texture_progress = ExtResource("62_e4guh")
-tint_under = Color(1, 1, 1, 0)
-tint_over = Color(1, 1, 1, 0)
+texture_progress = ExtResource("62_f1o5k")
 tint_progress = Color(1, 1, 0, 1)
 
 [node name="skeleton" type="CharacterBody2D" parent="." groups=["enemy"]]
@@ -585,9 +581,7 @@ offset_bottom = 40.0
 scale = Vector2(2.20987, 0.202182)
 step = 0.01
 value = 100.0
-texture_progress = ExtResource("62_e4guh")
-tint_under = Color(1, 1, 1, 0)
-tint_over = Color(1, 1, 1, 0)
+texture_progress = ExtResource("62_f1o5k")
 tint_progress = Color(1, 0, 0, 1)
 
 [node name="floor" type="StaticBody2D" parent="."]
