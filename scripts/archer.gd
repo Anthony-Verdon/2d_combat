@@ -32,6 +32,7 @@ func _ready() -> void:
 func _process(delta) -> void:
 	if (isDead):
 		return
+
 	var direction: Vector2 = Vector2(Input.get_axis("ui_left", "ui_right"), 0)
 	if (is_on_floor()):
 		checkPlayerAction()
@@ -115,13 +116,14 @@ func takeDamage() -> void:
 	else:
 		animatedSprite2D.play("takeDamage")
 		latestAnimationEnded = false
-	energy -= 5
-	energyBar.value = energy
+		energy -= 5
+		energyBar.value = energy
 
 func die() -> void:
 	animatedSprite2D.play("death")
 	isDead = true;
 	get_node("CollisionShape2D").set_deferred("disabled", true)
+	energyBar.value = 0
 
 func _on_animated_sprite_2d_animation_finished():
 	latestAnimationEnded = true;

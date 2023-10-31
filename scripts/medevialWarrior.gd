@@ -127,13 +127,14 @@ func takeDamage() -> void:
 	else:
 		animatedSprite2D.play("takeDamage")
 		latestAnimationEnded = false
-	energy -= 5
-	energyBar.value = energy
+		energy -= 5
+		energyBar.value = energy
 
 func die() -> void:
 	animatedSprite2D.play("death")
 	isDead = true;
 	get_node("CollisionShape2D").set_deferred("disabled", true)
+	energyBar.value = 0
 
 func _on_animated_sprite_2d_animation_finished():
 	latestAnimationEnded = true;

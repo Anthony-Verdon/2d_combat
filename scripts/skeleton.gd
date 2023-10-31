@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = 2500.0
 const HEALTH_MAX = 100
 const JUMP_HEIGHT: float  = 200
@@ -15,7 +14,9 @@ const FALL_GRAVITY: float = (-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_DESCENT * JUMP_
 @onready var weaponHitBoxFrame6 = $weapon/hitBoxFrame6
 @onready var weaponHitBoxFrame7 = $weapon/hitBoxFrame7
 @onready var healthBar = $statisticsBars/healthBar
-var player
+
+var playerInstance
+var playerType
 var health: int = HEALTH_MAX
 var isDead: bool = false
 var latestAnimationEnded : bool = true
@@ -23,15 +24,22 @@ var direction: int = 1
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 var protected: bool = false
 
+enum PLAYER{
+  MELEE,
+  RANGE
+}
+
 func _ready() -> void:
 	healthBar.value = health
 	var nodeInstance = get_tree().root.get_node("Node2D/medevialWarrior")
 	if (nodeInstance != null):
-		player = nodeInstance
+		playerInstance = nodeInstance
+		playerType = PLAYER.MELEE
 		return
 	nodeInstance = get_tree().root.get_node("Node2D/archer")
 	if (nodeInstance != null):
-		player = nodeInstance
+		playerInstance = nodeInstance
+		playerType = PLAYER.RANGE
 		return 
 
 func _process(delta: float) -> void:
@@ -42,11 +50,11 @@ func _process(delta: float) -> void:
 		get_node("weapon/hitBoxFrame6").set_deferred("disabled", true)
 		get_node("weapon/hitBoxFrame7").set_deferred("disabled", true)
 		protected = false
-		if (player == null):
+		if (playerInstance == null || playerInstance.getIsDead()):
 			chill()
 			return 
-		var distanceToPlayer: float = calculateDistance(player.position, position);
-		if (player.getIsDead() || distanceToPlayer >= 350.0):
+		var distanceToPlayer: float = calculateDistance(playerInstance.position, position);
+		if (distanceToPlayer >= 350.0):
 			chill()
 		else:
 			attackPlayer(delta, distanceToPlayer)
@@ -72,7 +80,7 @@ func attackPlayer(delta: float, distanceToPlayer: float) -> void:
 	
 func move(delta: float) -> void:
 	var newDirection: int
-	if (position.x - player.position.x > 0):
+	if (position.x - playerInstance.position.x > 0):
 		newDirection = -1
 	else:
 		newDirection = 1
