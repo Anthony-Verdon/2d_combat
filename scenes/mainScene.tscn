@@ -1,12 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjr0xdwbjdnnw"]
 
 [ext_resource type="PackedScene" uid="uid://vxrtgauf6gu" path="res://scenes/skeleton.tscn" id="1_bpcva"]
-[ext_resource type="PackedScene" uid="uid://budfikld10k6d" path="res://scenes/medevial_warrior.tscn" id="2_dby0v"]
+[ext_resource type="Script" path="res://scripts/mainScene.gd" id="1_xgsi7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mdg8"]
 size = Vector2(1683, 18)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_xgsi7")
 
 [node name="skeleton" parent="." instance=ExtResource("1_bpcva")]
 
@@ -19,5 +20,3 @@ collision_mask = 3
 position = Vector2(239.5, -1)
 shape = SubResource("RectangleShape2D_7mdg8")
 metadata/_edit_lock_ = true
-
-[node name="medevialWarrior" parent="." instance=ExtResource("2_dby0v")]

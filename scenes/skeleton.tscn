@@ -171,7 +171,6 @@ scale = Vector2(1.38283, 1.38283)
 sprite_frames = SubResource("SpriteFrames_somex")
 animation = &"attack"
 frame = 7
-frame_progress = 1.0
 metadata/_edit_lock_ = true
 
 [node name="weapon" type="Area2D" parent="."]

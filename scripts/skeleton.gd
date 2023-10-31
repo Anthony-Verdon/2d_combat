@@ -15,7 +15,7 @@ const FALL_GRAVITY: float = (-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_DESCENT * JUMP_
 @onready var weaponHitBoxFrame7 = $weapon/hitBoxFrame7
 @onready var healthBar = $statisticsBars/healthBar
 
-var playerInstance
+var playerInstance = null
 var playerType
 var health: int = HEALTH_MAX
 var isDead: bool = false
@@ -31,21 +31,12 @@ enum PLAYER{
 
 func _ready() -> void:
 	healthBar.value = health
-	var nodeInstance = get_tree().root.get_node("Node2D/medevialWarrior")
-	if (nodeInstance != null):
-		playerInstance = nodeInstance
-		playerType = PLAYER.MELEE
-		return
-	nodeInstance = get_tree().root.get_node("Node2D/archer")
-	if (nodeInstance != null):
-		playerInstance = nodeInstance
-		playerType = PLAYER.RANGE
-		return 
 
 func _process(delta: float) -> void:
 	if (isDead):
 		return
-
+	
+	findPlayer()
 	if (latestAnimationEnded):
 		get_node("weapon/hitBoxFrame6").set_deferred("disabled", true)
 		get_node("weapon/hitBoxFrame7").set_deferred("disabled", true)
@@ -69,6 +60,17 @@ func _process(delta: float) -> void:
 				get_node("weapon/hitBoxFrame6").set_deferred("disabled", true)
 				get_node("weapon/hitBoxFrame7").set_deferred("disabled", true)
 
+func findPlayer() -> void:
+	if (playerInstance != null):
+		return
+	if (get_tree().root.has_node("Node2D/medevialWarrior")):
+		playerInstance = get_tree().root.get_node("Node2D/medevialWarrior")
+		playerType = PLAYER.MELEE
+		return
+	if (get_tree().root.has_node("Node2D/archer")):
+		playerInstance = get_tree().root.get_node("Node2D/archer")
+		playerType = PLAYER.RANGE
+		return
 func calculateDistance(positionA: Vector2, positionB: Vector2) -> float:
 	return (sqrt(pow(positionB.x - positionA.x, 2) + pow(positionB.y - positionA.y, 2)))
 
@@ -120,7 +122,7 @@ func takeDamage() -> void:
 	#idea : add a parameter "attackDirection", and if the enemy is protected and face the good direction, he protect himself
 	if (isDead || protected):
 		return ;
-	health -= 50;
+	health -= 10;
 	healthBar.value = health
 	if (health <= 0):
 		die();

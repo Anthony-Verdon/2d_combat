@@ -328,7 +328,7 @@ metadata/_edit_lock_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rgexc")
 animation = &"attack3"
-frame = 2
+frame = 3
 metadata/_edit_lock_ = true
 
 [node name="weapon" type="Area2D" parent="."]

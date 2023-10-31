@@ -1,0 +1,144 @@
+[gd_scene load_steps=38 format=3 uid="uid://cgbe82tog6os2"]
+
+[ext_resource type="Texture2D" uid="uid://dwgu84npvsw5i" path="res://assets/characters/medieval warrior/idle/tile000.png" id="1_ppkhb"]
+[ext_resource type="Script" path="res://scripts/choose_character.gd" id="1_r63d4"]
+[ext_resource type="Texture2D" uid="uid://b3ptuhd4crq07" path="res://assets/characters/medieval warrior/idle/tile001.png" id="2_0i7nb"]
+[ext_resource type="Texture2D" uid="uid://j5l1f4uls2sb" path="res://assets/characters/medieval warrior/idle/tile002.png" id="3_j123s"]
+[ext_resource type="Texture2D" uid="uid://cwt8l864bpo4v" path="res://assets/characters/medieval warrior/idle/tile003.png" id="4_dqjoi"]
+[ext_resource type="Texture2D" uid="uid://0wkj8bn57qic" path="res://assets/characters/medieval warrior/idle/tile004.png" id="5_bvsvt"]
+[ext_resource type="Texture2D" uid="uid://dsbbytpcq0164" path="res://assets/characters/medieval warrior/idle/tile005.png" id="6_oohi5"]
+[ext_resource type="Texture2D" uid="uid://ch1j3fr54jtyp" path="res://assets/characters/medieval warrior/runs/run2/tile000.png" id="7_nt70r"]
+[ext_resource type="Texture2D" uid="uid://cwldav3wv4dj0" path="res://assets/characters/medieval warrior/runs/run2/tile001.png" id="8_ih6gf"]
+[ext_resource type="Texture2D" uid="uid://cmwasoi6nnqws" path="res://assets/characters/medieval warrior/runs/run2/tile002.png" id="9_da7ky"]
+[ext_resource type="Texture2D" uid="uid://c8i6yhiduc33x" path="res://assets/characters/medieval warrior/runs/run2/tile003.png" id="10_e16tx"]
+[ext_resource type="Texture2D" uid="uid://cugpjbxcjxpns" path="res://assets/characters/medieval warrior/runs/run2/tile004.png" id="11_dae8w"]
+[ext_resource type="Texture2D" uid="uid://b1bopctpadb1f" path="res://assets/characters/medieval warrior/runs/run2/tile005.png" id="12_2kwls"]
+[ext_resource type="Texture2D" uid="uid://sd1vwgcx0onl" path="res://assets/characters/medieval warrior/runs/run2/tile006.png" id="13_t83s4"]
+[ext_resource type="Texture2D" uid="uid://s7dk1hqft3o6" path="res://assets/characters/medieval warrior/runs/run2/tile007.png" id="14_884ey"]
+[ext_resource type="Texture2D" uid="uid://uj6f6y07rilb" path="res://assets/characters/archer/idle/tile000.png" id="15_kxx4y"]
+[ext_resource type="Texture2D" uid="uid://c5gu4age0h1cl" path="res://assets/characters/archer/idle/tile001.png" id="16_gr515"]
+[ext_resource type="Texture2D" uid="uid://ct5oc1sbosf3c" path="res://assets/characters/archer/idle/tile002.png" id="17_6rurw"]
+[ext_resource type="Texture2D" uid="uid://dx6hc4ci37755" path="res://assets/characters/archer/idle/tile003.png" id="18_2jcmm"]
+[ext_resource type="Texture2D" uid="uid://dcpqbmxd5e112" path="res://assets/characters/archer/idle/tile004.png" id="19_imtc6"]
+[ext_resource type="Texture2D" uid="uid://q17vup23qi18" path="res://assets/characters/archer/idle/tile005.png" id="20_l121f"]
+[ext_resource type="Texture2D" uid="uid://kw56hxdg4vto" path="res://assets/characters/archer/idle/tile006.png" id="21_58ghj"]
+[ext_resource type="Texture2D" uid="uid://dk6ivpmkbs51f" path="res://assets/characters/archer/idle/tile007.png" id="22_mjue7"]
+[ext_resource type="Texture2D" uid="uid://eprgnoxvxaap" path="res://assets/characters/archer/idle/tile008.png" id="23_kyc81"]
+[ext_resource type="Texture2D" uid="uid://0ev2ikf67bi8" path="res://assets/characters/archer/idle/tile009.png" id="24_knjw5"]
+[ext_resource type="Texture2D" uid="uid://bo5dtcf178x4c" path="res://assets/characters/archer/run/tile000.png" id="25_lsjco"]
+[ext_resource type="Texture2D" uid="uid://ci2v362kfgby2" path="res://assets/characters/archer/run/tile001.png" id="26_tdgff"]
+[ext_resource type="Texture2D" uid="uid://v7y0ryd2wybu" path="res://assets/characters/archer/run/tile002.png" id="27_nb7xe"]
+[ext_resource type="Texture2D" uid="uid://bnu28ab7qh1f3" path="res://assets/characters/archer/run/tile003.png" id="28_lvbja"]
+[ext_resource type="Texture2D" uid="uid://f85tv3gifkgj" path="res://assets/characters/archer/run/tile004.png" id="29_ilc8g"]
+[ext_resource type="Texture2D" uid="uid://bmfuvikwc1o4c" path="res://assets/characters/archer/run/tile005.png" id="30_kjnjb"]
+[ext_resource type="Texture2D" uid="uid://7cbrxaw38783" path="res://assets/characters/archer/run/tile006.png" id="31_j8ggd"]
+[ext_resource type="Texture2D" uid="uid://dayfyrbw354gr" path="res://assets/characters/archer/run/tile007.png" id="32_bkg82"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_p4v4s"]
+frames = 6
+frame_0/texture = ExtResource("1_ppkhb")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("2_0i7nb")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("3_j123s")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("4_dqjoi")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("5_bvsvt")
+frame_4/duration = 0.1
+frame_5/texture = ExtResource("6_oohi5")
+frame_5/duration = 0.1
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_qeoew"]
+frames = 8
+frame_0/texture = ExtResource("7_nt70r")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("8_ih6gf")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("9_da7ky")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("10_e16tx")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("11_dae8w")
+frame_4/duration = 0.1
+frame_5/texture = ExtResource("12_2kwls")
+frame_5/duration = 0.1
+frame_6/texture = ExtResource("13_t83s4")
+frame_6/duration = 0.1
+frame_7/texture = ExtResource("14_884ey")
+frame_7/duration = 0.1
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_0kk35"]
+frames = 10
+frame_0/texture = ExtResource("15_kxx4y")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("16_gr515")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("17_6rurw")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("18_2jcmm")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("19_imtc6")
+frame_4/duration = 0.1
+frame_5/texture = ExtResource("20_l121f")
+frame_5/duration = 0.1
+frame_6/texture = ExtResource("21_58ghj")
+frame_6/duration = 0.1
+frame_7/texture = ExtResource("22_mjue7")
+frame_7/duration = 0.1
+frame_8/texture = ExtResource("23_kyc81")
+frame_8/duration = 0.1
+frame_9/texture = ExtResource("24_knjw5")
+frame_9/duration = 0.1
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_duqkp"]
+frames = 8
+frame_0/texture = ExtResource("25_lsjco")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("26_tdgff")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("27_nb7xe")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("28_lvbja")
+frame_3/duration = 0.1
+frame_4/texture = ExtResource("29_ilc8g")
+frame_4/duration = 0.1
+frame_5/texture = ExtResource("30_kjnjb")
+frame_5/duration = 0.1
+frame_6/texture = ExtResource("31_j8ggd")
+frame_6/duration = 0.1
+frame_7/texture = ExtResource("32_bkg82")
+frame_7/duration = 0.1
+
+[node name="chooseCharacter" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r63d4")
+
+[node name="meleeCharacterButton" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 323.0
+offset_top = 250.0
+offset_right = 507.0
+offset_bottom = 387.0
+texture_normal = SubResource("AnimatedTexture_p4v4s")
+texture_hover = SubResource("AnimatedTexture_qeoew")
+
+[node name="rangeCharacterButton" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 461.0
+offset_top = 227.0
+offset_right = 501.0
+offset_bottom = 267.0
+scale = Vector2(2.53891, 2.29529)
+texture_normal = SubResource("AnimatedTexture_0kk35")
+texture_hover = SubResource("AnimatedTexture_duqkp")
+
+[connection signal="pressed" from="meleeCharacterButton" to="." method="_on_melee_character_button_pressed"]
+[connection signal="pressed" from="rangeCharacterButton" to="." method="_on_range_character_button_pressed"]

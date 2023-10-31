@@ -8,8 +8,8 @@ const SPEED: int = 1000
 var spriteFlipped: bool = false
 var actual_direction: int
 var arrow_reach_ground: bool = false
-func initArrow(position: Vector2, direction: int) -> void:
-	self.position = Vector2(position.x, position.y - 23)
+func initArrow(initPosition: Vector2, direction: int) -> void:
+	position = Vector2(initPosition.x, initPosition.y - 23)
 	actual_direction = direction
 	if (direction == -1):
 		spriteFlipped = true

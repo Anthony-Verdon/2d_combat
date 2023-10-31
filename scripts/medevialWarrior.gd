@@ -39,7 +39,7 @@ func _process(delta) -> void:
 	timePast += delta
 	var direction: Vector2 = Vector2(Input.get_axis("ui_left", "ui_right"), 0)
 	if (is_on_floor()):
-		checkPlayerAction(timePast)
+		checkPlayerAction()
 	regenEnergy(delta)
 	updatePosition(direction, delta)
 	updateAnimation(direction)
@@ -55,15 +55,15 @@ func regenEnergy(delta: float) -> void:
 		energy = 100
 	energyBar.value = energy
 
-func checkPlayerAction(timePast: float) -> void:
+func checkPlayerAction() -> void:
 	if (Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
-		attack(timePast);
+		attack();
 	elif (Input.is_key_pressed(KEY_SPACE)):
 		jump();
 	elif (Input.is_key_pressed(KEY_SHIFT)):
 		roll();
 
-func attack(timePast: float) -> void:
+func attack() -> void:
 	if (!latestAnimationEnded || energy < 10):
 		return
 	
