@@ -99,7 +99,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("9_iw0uq")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack2",
 "speed": 5.0
 }, {
@@ -116,7 +116,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_m5dst")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack3",
 "speed": 5.0
 }, {
@@ -327,15 +327,28 @@ metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rgexc")
-animation = &"idle"
+animation = &"attack3"
+frame = 2
 metadata/_edit_lock_ = true
 
 [node name="weapon" type="Area2D" parent="."]
 metadata/_edit_lock_ = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="weapon"]
+[node name="attackHitbox1" type="CollisionPolygon2D" parent="weapon"]
+visible = false
 build_mode = 1
 polygon = PackedVector2Array(50, 23, 76, 38, 88, 20, 89, -13, 75, -47, 42, -65, 8, -66, -21, -46, 8, -53, 34, -42, 57, -8, 57, 15)
+metadata/_edit_lock_ = true
+
+[node name="attackHitbox2" type="CollisionPolygon2D" parent="weapon"]
+visible = false
+build_mode = 1
+polygon = PackedVector2Array(59, 16, 64, 21, 58, 24, 31, 25, -9, 17, -36, 8, -58, -2, -82, -5, -82, 0, -68, 7, -17, 24, 11, 30, 31, 33, 47, 33, 62, 30, 71, 24, 71, 21)
+metadata/_edit_lock_ = true
+
+[node name="attackHitbox3" type="CollisionPolygon2D" parent="weapon"]
+build_mode = 1
+polygon = PackedVector2Array(-30, 12, -23, 29, -9, 43, 4, 48, 22, 48, 37, 44, 52, 34, 61, 17, 61, -9, 53, -24, 45, -34, 27, -45, 10, -45, 5, -39, 16, -21, 21, -7, 23, 3, 20, 16, 10, 25, -2, 28, -8, 28, -18, 22, -29, 12)
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
