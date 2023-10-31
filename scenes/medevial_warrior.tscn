@@ -1,0 +1,379 @@
+[gd_scene load_steps=65 format=3 uid="uid://budfikld10k6d"]
+
+[ext_resource type="Script" path="res://scripts/medevialWarrior.gd" id="1_0o4ku"]
+[ext_resource type="Texture2D" uid="uid://ckrjnruptc0h1" path="res://assets/characters/medieval warrior/attacks/attack1/tile000.png" id="2_bag1i"]
+[ext_resource type="Texture2D" uid="uid://nkxxgftpx02u" path="res://assets/characters/medieval warrior/attacks/attack1/tile001.png" id="3_4f46b"]
+[ext_resource type="Texture2D" uid="uid://cg6dsa577ookh" path="res://assets/characters/medieval warrior/attacks/attack1/tile002.png" id="4_mbguw"]
+[ext_resource type="Texture2D" uid="uid://d226hmo0jopop" path="res://assets/characters/medieval warrior/attacks/attack1/tile003.png" id="5_ipvmm"]
+[ext_resource type="Texture2D" uid="uid://orugnincpif" path="res://assets/characters/medieval warrior/attacks/attack2/tile000.png" id="6_8qcgi"]
+[ext_resource type="Texture2D" uid="uid://k3nl4uapcx6p" path="res://assets/characters/medieval warrior/attacks/attack2/tile001.png" id="7_opcy5"]
+[ext_resource type="Texture2D" uid="uid://cqdrlbxj1reen" path="res://assets/characters/medieval warrior/attacks/attack2/tile002.png" id="8_7py50"]
+[ext_resource type="Texture2D" uid="uid://bvhdnbgw6dljp" path="res://assets/characters/medieval warrior/attacks/attack2/tile003.png" id="9_iw0uq"]
+[ext_resource type="Texture2D" uid="uid://cxcadj20ey7ei" path="res://assets/characters/medieval warrior/attacks/attack3/tile000.png" id="10_pg4t1"]
+[ext_resource type="Texture2D" uid="uid://badrx3oy6e4il" path="res://assets/characters/medieval warrior/attacks/attack3/tile001.png" id="11_4qig8"]
+[ext_resource type="Texture2D" uid="uid://c01gfv1oasu12" path="res://assets/characters/medieval warrior/attacks/attack3/tile002.png" id="12_y2ucx"]
+[ext_resource type="Texture2D" uid="uid://bj0keopxueasu" path="res://assets/characters/medieval warrior/attacks/attack3/tile003.png" id="13_m5dst"]
+[ext_resource type="Texture2D" uid="uid://dnh2rfa5dumv1" path="res://assets/characters/medieval warrior/crouch/tile000.png" id="14_rb4nk"]
+[ext_resource type="Texture2D" uid="uid://du1stkpvscrno" path="res://assets/characters/medieval warrior/crouch/tile001.png" id="15_2uxse"]
+[ext_resource type="Texture2D" uid="uid://3is112hcdm41" path="res://assets/characters/medieval warrior/crouch/tile002.png" id="16_fclrq"]
+[ext_resource type="Texture2D" uid="uid://bp7gk5rl3aa6l" path="res://assets/characters/medieval warrior/crouch/tile003.png" id="17_y4pbc"]
+[ext_resource type="Texture2D" uid="uid://b8200k7r0aesb" path="res://assets/characters/medieval warrior/death/tile000.png" id="18_38lhq"]
+[ext_resource type="Texture2D" uid="uid://cmu0gvkbuvo67" path="res://assets/characters/medieval warrior/death/tile001.png" id="19_s787s"]
+[ext_resource type="Texture2D" uid="uid://bi3ad3icf1rfx" path="res://assets/characters/medieval warrior/death/tile002.png" id="20_evgsd"]
+[ext_resource type="Texture2D" uid="uid://o3m3qnf2n1kv" path="res://assets/characters/medieval warrior/death/tile003.png" id="21_yl8bi"]
+[ext_resource type="Texture2D" uid="uid://rd5yg5uioemm" path="res://assets/characters/medieval warrior/death/tile004.png" id="22_23cb7"]
+[ext_resource type="Texture2D" uid="uid://bi71vdipid7ok" path="res://assets/characters/medieval warrior/death/tile005.png" id="23_hmj35"]
+[ext_resource type="Texture2D" uid="uid://d0t3m6danhi0y" path="res://assets/characters/medieval warrior/death/tile006.png" id="24_v8qty"]
+[ext_resource type="Texture2D" uid="uid://dyithdgwaanno" path="res://assets/characters/medieval warrior/death/tile007.png" id="25_6snmp"]
+[ext_resource type="Texture2D" uid="uid://bt4fnwqehj24g" path="res://assets/characters/medieval warrior/death/tile008.png" id="26_6nitc"]
+[ext_resource type="Texture2D" uid="uid://c2r2eydsgim5l" path="res://assets/characters/medieval warrior/fall/tile000.png" id="27_pu7xa"]
+[ext_resource type="Texture2D" uid="uid://drco38jcq8n84" path="res://assets/characters/medieval warrior/fall/tile001.png" id="28_x48ml"]
+[ext_resource type="Texture2D" uid="uid://dwgu84npvsw5i" path="res://assets/characters/medieval warrior/idle/tile000.png" id="29_mltv0"]
+[ext_resource type="Texture2D" uid="uid://b3ptuhd4crq07" path="res://assets/characters/medieval warrior/idle/tile001.png" id="30_bi4n4"]
+[ext_resource type="Texture2D" uid="uid://j5l1f4uls2sb" path="res://assets/characters/medieval warrior/idle/tile002.png" id="31_1jerv"]
+[ext_resource type="Texture2D" uid="uid://cwt8l864bpo4v" path="res://assets/characters/medieval warrior/idle/tile003.png" id="32_u1l5u"]
+[ext_resource type="Texture2D" uid="uid://0wkj8bn57qic" path="res://assets/characters/medieval warrior/idle/tile004.png" id="33_qlopd"]
+[ext_resource type="Texture2D" uid="uid://dsbbytpcq0164" path="res://assets/characters/medieval warrior/idle/tile005.png" id="34_w5ero"]
+[ext_resource type="Texture2D" uid="uid://b61moeu46sa1e" path="res://assets/characters/medieval warrior/jump/tile000.png" id="35_rn36u"]
+[ext_resource type="Texture2D" uid="uid://bukhhgp84q21o" path="res://assets/characters/medieval warrior/jump/tile001.png" id="36_j2su1"]
+[ext_resource type="Texture2D" uid="uid://bm31v3wngwspl" path="res://assets/characters/medieval warrior/roll/tile000.png" id="37_wu32h"]
+[ext_resource type="Texture2D" uid="uid://dawbubo11cukn" path="res://assets/characters/medieval warrior/roll/tile001.png" id="38_7hg0h"]
+[ext_resource type="Texture2D" uid="uid://d3any2axoasb3" path="res://assets/characters/medieval warrior/roll/tile002.png" id="39_03qb5"]
+[ext_resource type="Texture2D" uid="uid://b4vxoqoyfy1qd" path="res://assets/characters/medieval warrior/roll/tile003.png" id="40_sx3c7"]
+[ext_resource type="Texture2D" uid="uid://dragwkjrlgrmk" path="res://assets/characters/medieval warrior/runs/run1/tile000.png" id="41_eddgp"]
+[ext_resource type="Texture2D" uid="uid://dcpfgsqjb6gnt" path="res://assets/characters/medieval warrior/runs/run1/tile001.png" id="42_2k3ww"]
+[ext_resource type="Texture2D" uid="uid://bxymcxl7l5tl7" path="res://assets/characters/medieval warrior/runs/run1/tile002.png" id="43_60ua1"]
+[ext_resource type="Texture2D" uid="uid://mig5tmpl0iev" path="res://assets/characters/medieval warrior/runs/run1/tile003.png" id="44_0cncd"]
+[ext_resource type="Texture2D" uid="uid://br62iirvhklrq" path="res://assets/characters/medieval warrior/runs/run1/tile004.png" id="45_i6fds"]
+[ext_resource type="Texture2D" uid="uid://cmuuqvxnv0i1y" path="res://assets/characters/medieval warrior/runs/run1/tile005.png" id="46_kxkmi"]
+[ext_resource type="Texture2D" uid="uid://dtb0epecn2qjj" path="res://assets/characters/medieval warrior/runs/run1/tile006.png" id="47_vry8e"]
+[ext_resource type="Texture2D" uid="uid://ctwatt30fxkx3" path="res://assets/characters/medieval warrior/runs/run1/tile007.png" id="48_5imm3"]
+[ext_resource type="Texture2D" uid="uid://ch1j3fr54jtyp" path="res://assets/characters/medieval warrior/runs/run2/tile000.png" id="49_sjngm"]
+[ext_resource type="Texture2D" uid="uid://cwldav3wv4dj0" path="res://assets/characters/medieval warrior/runs/run2/tile001.png" id="50_js0sp"]
+[ext_resource type="Texture2D" uid="uid://cmwasoi6nnqws" path="res://assets/characters/medieval warrior/runs/run2/tile002.png" id="51_a8bam"]
+[ext_resource type="Texture2D" uid="uid://c8i6yhiduc33x" path="res://assets/characters/medieval warrior/runs/run2/tile003.png" id="52_vpkgd"]
+[ext_resource type="Texture2D" uid="uid://cugpjbxcjxpns" path="res://assets/characters/medieval warrior/runs/run2/tile004.png" id="53_m6grj"]
+[ext_resource type="Texture2D" uid="uid://b1bopctpadb1f" path="res://assets/characters/medieval warrior/runs/run2/tile005.png" id="54_t0raw"]
+[ext_resource type="Texture2D" uid="uid://sd1vwgcx0onl" path="res://assets/characters/medieval warrior/runs/run2/tile006.png" id="55_tdei8"]
+[ext_resource type="Texture2D" uid="uid://s7dk1hqft3o6" path="res://assets/characters/medieval warrior/runs/run2/tile007.png" id="56_b43dx"]
+[ext_resource type="Texture2D" uid="uid://dsqefnuehfqmv" path="res://assets/characters/medieval warrior/slide/tile000.png" id="57_cs1i3"]
+[ext_resource type="Texture2D" uid="uid://gk4q2e2rth0r" path="res://assets/characters/medieval warrior/slide/tile001.png" id="58_xn77u"]
+[ext_resource type="Texture2D" uid="uid://c3ksqffqi4h1k" path="res://assets/characters/medieval warrior/takeDamage/tile000.png" id="59_p2now"]
+[ext_resource type="Texture2D" uid="uid://cvu0kwm4y6du7" path="res://assets/characters/medieval warrior/takeDamage/tile001.png" id="60_2eigk"]
+[ext_resource type="Texture2D" uid="uid://brkuphdtju0tr" path="res://assets/characters/medieval warrior/takeDamage/tile002.png" id="61_arkfr"]
+[ext_resource type="Texture2D" uid="uid://crlswmstpxh7l" path="res://assets/white_texture.png" id="62_kyhjy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iei1d"]
+radius = 15.0
+height = 82.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rgexc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bag1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4f46b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mbguw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ipvmm")
+}],
+"loop": false,
+"name": &"attack1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_8qcgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_opcy5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7py50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_iw0uq")
+}],
+"loop": true,
+"name": &"attack2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_pg4t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4qig8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_y2ucx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_m5dst")
+}],
+"loop": true,
+"name": &"attack3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_rb4nk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2uxse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_fclrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_y4pbc")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_38lhq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_s787s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_evgsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_yl8bi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_23cb7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_hmj35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_v8qty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_6snmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_6nitc")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_pu7xa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_x48ml")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_mltv0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_bi4n4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_1jerv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_u1l5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_qlopd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_w5ero")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_rn36u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_j2su1")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_wu32h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_7hg0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_03qb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_sx3c7")
+}],
+"loop": false,
+"name": &"roll",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_eddgp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_2k3ww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_60ua1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_0cncd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_i6fds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_kxkmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_vry8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_5imm3")
+}],
+"loop": true,
+"name": &"run1",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_sjngm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_js0sp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_a8bam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_vpkgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_m6grj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_t0raw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_tdei8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_b43dx")
+}],
+"loop": false,
+"name": &"run2",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_cs1i3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_xn77u")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("59_p2now")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_2eigk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_arkfr")
+}],
+"loop": false,
+"name": &"takeDamage",
+"speed": 5.0
+}]
+
+[node name="medevialWarrior" type="CharacterBody2D" groups=["player"]]
+texture_filter = 1
+position = Vector2(-185, 144)
+script = ExtResource("1_0o4ku")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 16)
+shape = SubResource("CapsuleShape2D_iei1d")
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rgexc")
+animation = &"idle"
+metadata/_edit_lock_ = true
+
+[node name="weapon" type="Area2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="weapon"]
+build_mode = 1
+polygon = PackedVector2Array(50, 23, 76, 38, 88, 20, 89, -13, 75, -47, 42, -65, 8, -66, -21, -46, 8, -53, 34, -42, 57, -8, 57, 15)
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="statisticsBars" type="Control" parent="."]
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -36.0
+offset_top = -49.0
+offset_right = -36.0
+offset_bottom = -49.0
+grow_horizontal = 2
+scale = Vector2(1.00649, 1.45031)
+
+[node name="healthBar" type="TextureProgressBar" parent="statisticsBars"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2.20987, 0.202182)
+step = 0.01
+value = 100.0
+texture_progress = ExtResource("62_kyhjy")
+tint_progress = Color(1, 0, 0, 1)
+
+[node name="energyBar" type="TextureProgressBar" parent="statisticsBars"]
+layout_mode = 0
+offset_top = 6.89508
+offset_right = 40.0
+offset_bottom = 46.8951
+scale = Vector2(2.20987, 0.105957)
+step = 0.01
+value = 100.0
+texture_progress = ExtResource("62_kyhjy")
+tint_progress = Color(1, 1, 0, 1)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="weapon" to="." method="_on_weapon_body_entered"]

@@ -15,10 +15,9 @@ const FALL_GRAVITY: float = (-2.0 * JUMP_HEIGHT) / (JUMP_TIME_TO_DESCENT * JUMP_
 @onready var weaponHitBoxFrame6 = $weapon/hitBoxFrame6
 @onready var weaponHitBoxFrame7 = $weapon/hitBoxFrame7
 @onready var healthBar = $statisticsBars/healthBar
-@onready var player = get_tree().root.get_node("Node2D/medevialWarrior")
-
-var health: int = HEALTH_MAX;
-var isDead: bool = false;
+var player
+var health: int = HEALTH_MAX
+var isDead: bool = false
 var latestAnimationEnded : bool = true
 var direction: int = 1
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
@@ -26,6 +25,14 @@ var protected: bool = false
 
 func _ready() -> void:
 	healthBar.value = health
+	var nodeInstance = get_tree().root.get_node("Node2D/medevialWarrior")
+	if (nodeInstance != null):
+		player = nodeInstance
+		return
+	nodeInstance = get_tree().root.get_node("Node2D/archer")
+	if (nodeInstance != null):
+		player = nodeInstance
+		return 
 
 func _process(delta: float) -> void:
 	if (isDead):
@@ -35,6 +42,9 @@ func _process(delta: float) -> void:
 		get_node("weapon/hitBoxFrame6").set_deferred("disabled", true)
 		get_node("weapon/hitBoxFrame7").set_deferred("disabled", true)
 		protected = false
+		if (player == null):
+			chill()
+			return 
 		var distanceToPlayer: float = calculateDistance(player.position, position);
 		if (player.getIsDead() || distanceToPlayer >= 350.0):
 			chill()

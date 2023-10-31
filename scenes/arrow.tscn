@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://crbmgppj3uqva"]
+
+[ext_resource type="Script" path="res://scripts/arrow.gd" id="1_m0glb"]
+[ext_resource type="Texture2D" uid="uid://csec4wnn0iee1" path="res://assets/arrow/move/tile000.png" id="2_gslsb"]
+[ext_resource type="Texture2D" uid="uid://bbbdjm7qputgl" path="res://assets/arrow/move/tile001.png" id="3_uyqbn"]
+[ext_resource type="Texture2D" uid="uid://b1y35byawclov" path="res://assets/arrow/static/Static.png" id="4_imp00"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5k3cu"]
+size = Vector2(44, 6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w63qc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gslsb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uyqbn")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_imp00")
+}],
+"loop": true,
+"name": &"static",
+"speed": 5.0
+}]
+
+[node name="arrow" type="RigidBody2D"]
+texture_filter = 1
+disable_mode = 1
+collision_layer = 2
+collision_mask = 2
+center_of_mass_mode = 1
+center_of_mass = Vector2(50, 0)
+max_contacts_reported = 100
+contact_monitor = true
+script = ExtResource("1_m0glb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5k3cu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.985, 1.985)
+sprite_frames = SubResource("SpriteFrames_w63qc")
+animation = &"move"
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
