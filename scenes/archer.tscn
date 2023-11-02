@@ -115,7 +115,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("19_ppmlk")
 }],
-"loop": true,
+"loop": false,
 "name": &"fall",
 "speed": 5.0
 }, {
@@ -150,7 +150,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("29_qyhi4")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
 "speed": 10.0
 }, {
@@ -161,7 +161,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("31_gxqos")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
 "speed": 5.0
 }, {
@@ -190,7 +190,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("39_oj8se")
 }],
-"loop": true,
+"loop": false,
 "name": &"run",
 "speed": 5.0
 }, {
@@ -211,8 +211,9 @@ animations = [{
 
 [node name="archer" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
-position = Vector2(176, 170)
 scale = Vector2(1.96, 1.96)
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_spxac")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -221,8 +222,7 @@ shape = SubResource("CapsuleShape2D_2a33u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_n301a")
-animation = &"attack"
-frame = 3
+animation = &"takeDamage"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

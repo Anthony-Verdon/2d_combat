@@ -96,7 +96,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("17_8b4af")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -155,8 +155,7 @@ animations = [{
 [node name="skeleton" type="CharacterBody2D" groups=["enemy"]]
 texture_filter = 1
 position = Vector2(300, 176)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
 script = ExtResource("1_s60kc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -169,11 +168,12 @@ metadata/_edit_lock_ = true
 position = Vector2(0, -9)
 scale = Vector2(1.38283, 1.38283)
 sprite_frames = SubResource("SpriteFrames_somex")
-animation = &"attack"
-frame = 7
+animation = &"idle"
 metadata/_edit_lock_ = true
 
 [node name="weapon" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
 metadata/_edit_lock_ = true
 
 [node name="hitBoxFrame6" type="CollisionPolygon2D" parent="weapon"]

@@ -42,11 +42,11 @@ func _process(delta: float) -> void:
 		get_node("weapon/hitBoxFrame7").set_deferred("disabled", true)
 		protected = false
 		if (playerInstance == null || playerInstance.getIsDead()):
-			chill()
+			chill(delta)
 			return 
 		var distanceToPlayer: float = calculateDistance(playerInstance.position, position);
 		if (distanceToPlayer >= 350.0):
-			chill()
+			chill(delta)
 		else:
 			attackPlayer(delta, distanceToPlayer)
 	elif (animatedSprite2D.animation == "attack"):
@@ -71,6 +71,7 @@ func findPlayer() -> void:
 		playerInstance = get_tree().root.get_node("Node2D/archer")
 		playerType = PLAYER.RANGE
 		return
+
 func calculateDistance(positionA: Vector2, positionB: Vector2) -> float:
 	return (sqrt(pow(positionB.x - positionA.x, 2) + pow(positionB.y - positionA.y, 2)))
 
@@ -115,8 +116,12 @@ func shield() -> void:
 	protected = true;
 	latestAnimationEnded = false;
 	
-func chill() -> void:
+func chill(delta: float) -> void:
 	animatedSprite2D.play("idle")
+	velocity.x = 0
+	velocity.y = FALL_GRAVITY
+	velocity = velocity * delta
+	move_and_slide()
 	
 func takeDamage() -> void:
 	#idea : add a parameter "attackDirection", and if the enemy is protected and face the good direction, he protect himself

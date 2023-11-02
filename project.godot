@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="minijam144"
-run/main_scene="res://scenes/mainScene.tscn"
+config/name="2d_combat"
+run/main_scene="res://scenes/choose_character.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 
 [autoload]

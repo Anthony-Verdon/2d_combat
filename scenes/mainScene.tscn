@@ -10,9 +10,10 @@ size = Vector2(1683, 18)
 script = ExtResource("1_xgsi7")
 
 [node name="skeleton" parent="." instance=ExtResource("1_bpcva")]
+position = Vector2(375, 26)
 
 [node name="floor" type="StaticBody2D" parent="." groups=["ground"]]
-position = Vector2(-268, 220)
+position = Vector2(0, 68)
 collision_layer = 3
 collision_mask = 3
 

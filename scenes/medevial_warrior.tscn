@@ -133,7 +133,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("17_y4pbc")
 }],
-"loop": true,
+"loop": false,
 "name": &"crouch",
 "speed": 5.0
 }, {
@@ -199,7 +199,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("34_w5ero")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
 "speed": 9.0
 }, {
@@ -256,7 +256,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("48_5imm3")
 }],
-"loop": true,
+"loop": false,
 "name": &"run1",
 "speed": 7.0
 }, {
@@ -296,7 +296,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("58_xn77u")
 }],
-"loop": true,
+"loop": false,
 "name": &"slide",
 "speed": 5.0
 }, {
@@ -317,7 +317,8 @@ animations = [{
 
 [node name="medevialWarrior" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
-position = Vector2(-185, 144)
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_0o4ku")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -327,11 +328,12 @@ metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rgexc")
-animation = &"attack3"
-frame = 3
+animation = &"crouch"
 metadata/_edit_lock_ = true
 
 [node name="weapon" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
 metadata/_edit_lock_ = true
 
 [node name="attackHitbox1" type="CollisionPolygon2D" parent="weapon"]

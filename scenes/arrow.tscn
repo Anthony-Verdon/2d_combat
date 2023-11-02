@@ -33,10 +33,8 @@ animations = [{
 [node name="arrow" type="RigidBody2D"]
 texture_filter = 1
 disable_mode = 1
-collision_layer = 2
-collision_mask = 2
-center_of_mass_mode = 1
-center_of_mass = Vector2(50, 0)
+collision_layer = 8
+collision_mask = 3
 max_contacts_reported = 100
 contact_monitor = true
 script = ExtResource("1_m0glb")

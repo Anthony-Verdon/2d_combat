@@ -24,12 +24,13 @@ func _ready() -> void:
 func _on_body_entered(body):
 	if (arrow_reach_ground):
 		return
+
 	if (body.is_in_group("enemy")):
 		body.takeDamage()
 		queue_free()
-	elif (body.is_in_group("ground")):
+	else:
 		arrow_reach_ground = true
 		animatedSprite2D.stop()
-		sleeping = true
-		gravity_scale = 0
-		
+		linear_velocity = Vector2.ZERO
+		freeze = true
+		set_collision_mask_value(2, false)
